@@ -1,0 +1,10 @@
+D:\KASHAG\programming\WimdowsForm\WF_HW_8\WF_HW_8\bin\Debug\WF_HW_8.exe.config
+D:\KASHAG\programming\WimdowsForm\WF_HW_8\WF_HW_8\bin\Debug\WF_HW_8.exe
+D:\KASHAG\programming\WimdowsForm\WF_HW_8\WF_HW_8\bin\Debug\WF_HW_8.pdb
+D:\KASHAG\programming\WimdowsForm\WF_HW_8\WF_HW_8\obj\Debug\WF_HW_8.csproj.AssemblyReference.cache
+D:\KASHAG\programming\WimdowsForm\WF_HW_8\WF_HW_8\obj\Debug\WF_HW_8.Properties.Resources.resources
+D:\KASHAG\programming\WimdowsForm\WF_HW_8\WF_HW_8\obj\Debug\WF_HW_8.csproj.GenerateResource.cache
+D:\KASHAG\programming\WimdowsForm\WF_HW_8\WF_HW_8\obj\Debug\WF_HW_8.csproj.CoreCompileInputs.cache
+D:\KASHAG\programming\WimdowsForm\WF_HW_8\WF_HW_8\obj\Debug\WF_HW_8.exe
+D:\KASHAG\programming\WimdowsForm\WF_HW_8\WF_HW_8\obj\Debug\WF_HW_8.pdb
+D:\KASHAG\programming\WimdowsForm\WF_HW_8\WF_HW_8\obj\Debug\WF_HW_8.WaterMark.resources
