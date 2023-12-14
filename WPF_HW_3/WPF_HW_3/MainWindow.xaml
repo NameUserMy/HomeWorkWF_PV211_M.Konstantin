@@ -1,0 +1,23 @@
+﻿<Window x:Class="WPF_HW_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_HW_3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="500">
+    <Grid Background="#FF4500">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+          
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.8*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,10,0" Name="uri" Grid.Row="0" Height="25" Width="300" Background="DarkOrange" BorderThickness="0" ></TextBox>
+        <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0" Background="DarkOrange" BorderThickness="0" Name="startDownLoad"  Content="Down Load" Click="DownLoad" Grid.Column="1" Width="150" Height="25" ></Button>
+        <ProgressBar HorizontalAlignment="Left" VerticalAlignment="Top" Name="progressFile" Grid.Row="1" Grid.ColumnSpan="2"   Width="500" Height="25" Margin="10,0,10,0" Background="DarkOrange" BorderThickness="0" ></ProgressBar>
+    </Grid>
+</Window>
