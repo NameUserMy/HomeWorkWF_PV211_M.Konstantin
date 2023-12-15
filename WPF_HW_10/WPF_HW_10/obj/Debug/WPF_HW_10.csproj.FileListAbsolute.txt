@@ -1,0 +1,15 @@
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\bin\Debug\WPF_HW_10.exe.config
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\bin\Debug\WPF_HW_10.exe
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\bin\Debug\WPF_HW_10.pdb
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\obj\Debug\WPF_HW_10.csproj.AssemblyReference.cache
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\obj\Debug\MainWindow.g.cs
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\obj\Debug\App.g.cs
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\obj\Debug\WPF_HW_10_MarkupCompile.cache
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\obj\Debug\WPF_HW_10_MarkupCompile.lref
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\obj\Debug\MainWindow.baml
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\obj\Debug\WPF_HW_10.g.resources
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\obj\Debug\WPF_HW_10.Properties.Resources.resources
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\obj\Debug\WPF_HW_10.csproj.GenerateResource.cache
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\obj\Debug\WPF_HW_10.csproj.CoreCompileInputs.cache
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\obj\Debug\WPF_HW_10.exe
+F:\KASHAG\programming\WPF\WPF_HW_10\WPF_HW_10\obj\Debug\WPF_HW_10.pdb
