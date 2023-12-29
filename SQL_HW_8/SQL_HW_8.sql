@@ -1,158 +1,158 @@
 
 
---BEGIN --1
+BEGIN --1
 
---CREATE DATABASE forProcedure
---USE forProcedure
+CREATE DATABASE forProcedure
+USE forProcedure
 
---BEGIN --Create table ([Employees],[EmployeeDetails])
+BEGIN --Create table ([Employees],[EmployeeDetails])
 
---CREATE TABLE [Employees] (
---††††[ID] INT PRIMARY KEY IDENTITY,
---††††[Name] NVARCHAR(50),
---††††[Position] NVARCHAR(50),
---††††[Department] NVARCHAR(50)
---);
+CREATE TABLE [Employees] (
+††††[ID] INT PRIMARY KEY IDENTITY,
+††††[Name] NVARCHAR(50),
+††††[Position] NVARCHAR(50),
+††††[Department] NVARCHAR(50)
+);
 
---CREATE TABLE [EmployeeDetails] (
---††††[ID] INT PRIMARY KEY IDENTITY,
---††††[EmployeeID] INT FOREIGN KEY REFERENCES [Employees]([ID]),
---††††[Email] NVARCHAR(50),
---††††[PhoneNumber] NVARCHAR(15)
---);
---END;
+CREATE TABLE [EmployeeDetails] (
+††††[ID] INT PRIMARY KEY IDENTITY,
+††††[EmployeeID] INT FOREIGN KEY REFERENCES [Employees]([ID]),
+††††[Email] NVARCHAR(50),
+††††[PhoneNumber] NVARCHAR(15)
+);
+END;
 
---EXEC sp_addDataEmployee 'ddd','sss','sss'
+EXEC sp_addDataEmployee 'ddd','sss','sss'
 
---EXEC sp_addDataEmployeeDetails '1','blahblah@net.com','2222'
+EXEC sp_addDataEmployeeDetails '1','blahblah@net.com','2222'
 
---SELECT * FROM [EmployeeDetails]
+SELECT * FROM [EmployeeDetails]
 
---EXEC sp_getData
+EXEC sp_getData
 
---EXEC sp_uppdateData '1','Some NAme','Position','Department','@Email','PhoneNumber'
+EXEC sp_uppdateData '1','Some NAme','Position','Department','@Email','PhoneNumber'
 
---EXEC sp_deleteData '1'
-
-
---EXEC sp_uppdateDataDefault '1','VALUE'
+EXEC sp_deleteData '1'
 
 
---EXEC sp_insertDataEmployeeDefault 'blah'
-
---SELECT * FROM [Employees]
-
---DECLARE @Name NVARCHAR(50),@Depart NVARCHAR(50)
---EXEC sp_getNameDepartEmployee  '1',@Name OUTPUT,@Depart OUTPUT
---PRINT @Name+' '+@Depart
-
---END;
-
----- Create procedure FRO first task
---GO
---CREATE PROCEDURE sp_addDataEmployee
---@Name NVARCHAR(50),@Position NVARCHAR(50),@Department NVARCHAR(50)
---AS
---BEGIN
---INSERT INTO [Employees]([Name],[Position],[Department])VALUES(@Name,@Position,@Department)
---END;
---GO
---CREATE PROCEDURE sp_addDataEmployeeDetails
---@ID INT,@Email NVARCHAR(50),@PhoneNumber NVARCHAR(15)
---AS
---BEGIN
---INSERT INTO [EmployeeDetails]([EmployeeID],[Email],[PhoneNumber])VALUES(@ID,@Email,@PhoneNumber)
---END;
---GO
---CREATE PROCEDURE sp_getData
---AS
---BEGIN
---SELECT * FROM [Employees] JOIN [EmployeeDetails] ON [Employees].[ID]=[EmployeeDetails].[EmployeeID]
---END;
---GO
---CREATE PROCEDURE sp_uppdateData
---@ID INT,@Name NVARCHAR(50),@Position NVARCHAR(50),@Department NVARCHAR(50),
---@PhoneNumber NVARCHAR(15),@Email NVARCHAR(50)
---AS
---BEGIN
---UPDATE [Employees] SET [Name]=@Name,[Position]=@Position,[Department]=@Department  WHERE [Employees].[ID]=@ID
---UPDATE [EmployeeDetails] SET [Email]=@Email,[PhoneNumber]=@PhoneNumber WHERE [EmployeeDetails].[EmployeeID]=@ID
---END;
---GO
---CREATE PROCEDURE sp_insertDataEmployeeDefault
---@Name NVARCHAR(50)=NULL,
---@Position NVARCHAR(50)=NULL,
---@Department NVARCHAR(50)=NULL
---AS
---BEGIN
---INSERT INTO [Employees]([Name],[Position],[Department]) VALUES (@Name,@Position,@Department)
---END;
---GO
---CREATE PROCEDURE sp_deleteData
---@ID INT
---AS
---BEGIN
---DELETE FROM[EmployeeDetails] WHERE [EmployeeID]=@ID 
---DELETE FROM[Employees] WHERE [Employees].[ID]=@ID
---END
---GO
---CREATE PROCEDURE sp_getNameDepartEmployee
---@ID INT,
---@Name NVARCHAR(50) OUTPUT,
---@Depart NVARCHAR(50) OUTPUT
---AS
---BEGIN
---SELECT @Name=[Name],@Depart=[Department] FROM [Employees] WHERE [Employees].[ID]=1
---END
-
-----End Create
-
---BEGIN -- Second task
-
---BEGIN-- Create table(HiTech)
---CREATE TABLE HiTech(
---        [ProductId] INT IDENTITY(1,1) NOT NULL,
---        [CategoryId] INT NOT NULL, 
---        [ProductName] NVARCHAR(100) NOT NULL,
---        [Price] MONEY NULL
---   )
-
---END;
-
---BEGIN --fill info
---INSERT INTO HiTech(CategoryId, ProductName, Price) VALUES 
---   (1, 'Ã˚¯¸', 100),
---   (1, ' Î‡‚Ë‡ÚÛ‡', 200),
---   (2, '“ÂÎÂÙÓÌ', 400)
-
---END;
-
---EXEC  sp_addProduct  @CategoryId='1',@ProductName='Any product 6',@Price='33' 
-
---SELECT * FROM HiTech
-
---END;
+EXEC sp_uppdateDataDefault '1','VALUE'
 
 
-----Create procedure
---GO
---CREATE PROCEDURE sp_addProduct
---@CategoryId INT,@ProductName NVARCHAR(100),@Price MONEY=NULL
---AS
---BEGIN
---INSERT INTO HiTech ([CategoryId],[ProductName],[Price])VALUES(@CategoryId,TRIM (@ProductName),@Price)
---SELECT * FROM HiTech WHERE HiTech.CategoryId=@CategoryId
---END;
+EXEC sp_insertDataEmployeeDefault 'blah'
 
---GO
---ALTER  PROCEDURE sp_addProduct
---@CategoryId INT,@ProductName NVARCHAR(100),@Price MONEY
---AS
---BEGIN
---INSERT INTO HiTech ([CategoryId],[ProductName],[Price])VALUES(@CategoryId,TRIM (@ProductName),@Price)
---END;
+SELECT * FROM [Employees]
 
---DROP PROCEDURE sp_addProduct
+DECLARE @Name NVARCHAR(50),@Depart NVARCHAR(50)
+EXEC sp_getNameDepartEmployee  '1',@Name OUTPUT,@Depart OUTPUT
+PRINT @Name+' '+@Depart
+
+END;
+
+-- Create procedure FRO first task
+GO
+CREATE PROCEDURE sp_addDataEmployee
+@Name NVARCHAR(50),@Position NVARCHAR(50),@Department NVARCHAR(50)
+AS
+BEGIN
+INSERT INTO [Employees]([Name],[Position],[Department])VALUES(@Name,@Position,@Department)
+END;
+GO
+CREATE PROCEDURE sp_addDataEmployeeDetails
+@ID INT,@Email NVARCHAR(50),@PhoneNumber NVARCHAR(15)
+AS
+BEGIN
+INSERT INTO [EmployeeDetails]([EmployeeID],[Email],[PhoneNumber])VALUES(@ID,@Email,@PhoneNumber)
+END;
+GO
+CREATE PROCEDURE sp_getData
+AS
+BEGIN
+SELECT * FROM [Employees] JOIN [EmployeeDetails] ON [Employees].[ID]=[EmployeeDetails].[EmployeeID]
+END;
+GO
+CREATE PROCEDURE sp_uppdateData
+@ID INT,@Name NVARCHAR(50),@Position NVARCHAR(50),@Department NVARCHAR(50),
+@PhoneNumber NVARCHAR(15),@Email NVARCHAR(50)
+AS
+BEGIN
+UPDATE [Employees] SET [Name]=@Name,[Position]=@Position,[Department]=@Department  WHERE [Employees].[ID]=@ID
+UPDATE [EmployeeDetails] SET [Email]=@Email,[PhoneNumber]=@PhoneNumber WHERE [EmployeeDetails].[EmployeeID]=@ID
+END;
+GO
+CREATE PROCEDURE sp_insertDataEmployeeDefault
+@Name NVARCHAR(50)=NULL,
+@Position NVARCHAR(50)=NULL,
+@Department NVARCHAR(50)=NULL
+AS
+BEGIN
+INSERT INTO [Employees]([Name],[Position],[Department]) VALUES (@Name,@Position,@Department)
+END;
+GO
+CREATE PROCEDURE sp_deleteData
+@ID INT
+AS
+BEGIN
+DELETE FROM[EmployeeDetails] WHERE [EmployeeID]=@ID 
+DELETE FROM[Employees] WHERE [Employees].[ID]=@ID
+END
+GO
+CREATE PROCEDURE sp_getNameDepartEmployee
+@ID INT,
+@Name NVARCHAR(50) OUTPUT,
+@Depart NVARCHAR(50) OUTPUT
+AS
+BEGIN
+SELECT @Name=[Name],@Depart=[Department] FROM [Employees] WHERE [Employees].[ID]=1
+END
+
+--End Create
+
+BEGIN -- Second task
+
+BEGIN-- Create table(HiTech)
+CREATE TABLE HiTech(
+        [ProductId] INT IDENTITY(1,1) NOT NULL,
+        [CategoryId] INT NOT NULL, 
+        [ProductName] NVARCHAR(100) NOT NULL,
+        [Price] MONEY NULL
+   )
+
+END;
+
+BEGIN --fill info
+INSERT INTO HiTech(CategoryId, ProductName, Price) VALUES 
+   (1, 'Ã˚¯¸', 100),
+   (1, ' Î‡‚Ë‡ÚÛ‡', 200),
+   (2, '“ÂÎÂÙÓÌ', 400)
+
+END;
+
+EXEC  sp_addProduct  @CategoryId='1',@ProductName='Any product 6',@Price='33' 
+
+SELECT * FROM HiTech
+
+END;
+
+
+--Create procedure
+GO
+CREATE PROCEDURE sp_addProduct
+@CategoryId INT,@ProductName NVARCHAR(100),@Price MONEY=NULL
+AS
+BEGIN
+INSERT INTO HiTech ([CategoryId],[ProductName],[Price])VALUES(@CategoryId,TRIM (@ProductName),@Price)
+SELECT * FROM HiTech WHERE HiTech.CategoryId=@CategoryId
+END;
+
+GO
+ALTER  PROCEDURE sp_addProduct
+@CategoryId INT,@ProductName NVARCHAR(100),@Price MONEY
+AS
+BEGIN
+INSERT INTO HiTech ([CategoryId],[ProductName],[Price])VALUES(@CategoryId,TRIM (@ProductName),@Price)
+END;
+
+DROP PROCEDURE sp_addProduct
 
 --end create procedure
 
