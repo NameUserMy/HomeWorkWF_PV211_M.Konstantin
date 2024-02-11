@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=DESKTOP-B4N5F81;Database=Pfm;Trusted_Connection=True;TrustServerCertificate=True;"
+  }
+}
