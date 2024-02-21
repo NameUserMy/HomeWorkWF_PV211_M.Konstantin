@@ -1,0 +1,6 @@
+{
+  "ConnectionStrings": {
+    "ForUser": "Server=DESKTOP-B4N5F81;Database=UserSettings;Trusted_Connection=True;TrustServerCertificate=True;",
+    "ForPublish": "Server=DESKTOP-B4N5F81;Database=PublishingHouse;Trusted_Connection=True;TrustServerCertificate=True;"
+  }
+}
